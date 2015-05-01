@@ -15,3 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Sublime project and workspace
+*.sublime-workspace
+*.sublime-project
