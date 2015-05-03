@@ -5,11 +5,16 @@
     %title CambiosCursos
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = content_tag :meta, "", name: "viewport", content: "width=devise-width, initial-scale=1"
   %body
+    = render "shared/header"
     - if flash[:alert]
-      = flash[:alert]
+      .alert.alert-success
+        = flash[:alert]
     - if flash[:notice]
-      = flash[:notice]
+      .alert.alert-danger
+        = flash[:notice]
     = yield
+    = render "shared/footer"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = yield(:scripts)

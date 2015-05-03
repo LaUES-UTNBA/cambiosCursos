@@ -1,0 +1,55 @@
+.container
+  .panel-group
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-xs-6.text-left
+            %a{href: "#collapse-search", data: {toggle: "collapse"}}
+              Filtros
+
+      #collapse-search.panel-collapse.collapse
+        .panel-body
+          .row
+            .col-xs-15
+              .input-group
+                %label
+                  regional
+                %input
+              .input-group
+                %label
+                  especialidad
+                %input
+            .col-xs-15
+              .input-group
+                %label 
+                  curso origen
+                %input
+              .input-group
+                %label 
+                  curso destino
+                %input
+          .form-actions.text-center
+            %button.btn.btn-primary
+              Filtrar
+
+  %table.table.table-striped.table-responsive
+    %thead
+      %tr
+        %th
+          regional
+        %th
+          especialidad
+        %th
+          curso origen
+        %th
+          curso destino
+    %tbody
+      %tr
+        %td
+          FRBA
+        %td
+          sistemas
+        %td
+          k3078
+        %td
+          k2056

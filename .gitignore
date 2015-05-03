@@ -19,3 +19,6 @@
 # Sublime project and workspace
 *.sublime-workspace
 *.sublime-project
+
+#redis dump?
+dump.rdb
