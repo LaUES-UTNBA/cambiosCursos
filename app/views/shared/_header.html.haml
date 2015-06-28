@@ -1,7 +1,11 @@
 %nav{class: "navbar navbar-default"}
   .container-fluid
     .navbar-header
-    %ul.nav.navbar-nav.pull-right
+    %ul.nav.navbar-nav
+      %li
+        = link_to root_path do
+          = image_tag "logo.png", size: "50x50"
+    %ul.nav.navbar-nav.pull-right.devise-links
       - if current_user.blank?
         %li
           = link_to "Registrarse", new_user_registration_path

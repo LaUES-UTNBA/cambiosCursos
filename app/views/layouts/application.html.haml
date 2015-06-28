@@ -9,11 +9,11 @@
   %body
     = render "shared/header"
     - if flash[:alert]
-      .alert.alert-success
-        = flash[:alert]
+      .alert{data: {alert: flash[:alert]}}
+    - if flash[:error]
+      .error{data: {error: flash[:error]}}
     - if flash[:notice]
-      .alert.alert-danger
-        = flash[:notice]
+      .notice{data: {notice: flash[:notice]}}
     = yield
     = render "shared/footer"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
