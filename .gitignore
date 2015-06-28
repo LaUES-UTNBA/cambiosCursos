@@ -22,3 +22,6 @@
 
 #redis dump?
 dump.rdb
+
+#uploaded images
+public/uploads

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501183821) do
+ActiveRecord::Schema.define(version: 20150628141843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,52 @@ ActiveRecord::Schema.define(version: 20150501183821) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "careers", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "courses", force: true do |t|
+    t.string  "code"
+    t.string  "period"
+    t.integer "professor_id"
+    t.integer "subject_id"
+    t.integer "office_id"
+  end
+
+  add_index "courses", ["office_id"], name: "index_courses_on_office_id", using: :btree
+  add_index "courses", ["professor_id"], name: "index_courses_on_professor_id", using: :btree
+  add_index "courses", ["subject_id"], name: "index_courses_on_subject_id", using: :btree
+
+  create_table "offices", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "professors", force: true do |t|
+    t.string "first_name"
+    t.string "last_name"
+  end
+
+  create_table "regionals", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "solicitudes", force: true do |t|
+    t.text    "comments"
+    t.integer "solicitant_id"
+    t.integer "applicant_id"
+    t.integer "course_id"
+  end
+
+  add_index "solicitudes", ["applicant_id"], name: "index_solicitudes_on_applicant_id", using: :btree
+  add_index "solicitudes", ["course_id"], name: "index_solicitudes_on_course_id", using: :btree
+  add_index "solicitudes", ["solicitant_id"], name: "index_solicitudes_on_solicitant_id", using: :btree
+
+  create_table "subjects", force: true do |t|
+    t.string  "name"
+    t.string  "type"
+    t.integer "career_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -62,8 +108,13 @@ ActiveRecord::Schema.define(version: 20150501183821) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.integer  "career_id"
   end
 
+  add_index "users", ["career_id"], name: "index_users_on_career_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
