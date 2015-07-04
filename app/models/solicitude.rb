@@ -4,7 +4,17 @@ class Solicitude < ActiveRecord::Base
   # Fields
   #
 
-  #comments:text
+  #solicitant_comments:text
+  #applicant_comments:text
+
+  #
+  # Validations
+  #
+
+  validates :solicitant, presence: true
+  validates :applicant, presence: true
+  validates :origin_course, presence: true
+  validates :wanted_course, presence: true
 
   #
   # Relations
@@ -12,6 +22,7 @@ class Solicitude < ActiveRecord::Base
 
   belongs_to :solicitant, class_name: "User"
   belongs_to :applicant, class_name: "User"
-  belongs_to :course
+  belongs_to :origin_course, class_name: "Course"
+  belongs_to :wanted_course, class_name: "Course"
 
 end

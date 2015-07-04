@@ -7,9 +7,16 @@ class Office < ActiveRecord::Base
   #name:string
 
   #
+  # Validations
+  #
+
+  validates :name, presence: true
+
+  #
   # Relations
   #
 
+  belongs_to :regional
   has_many :courses
 
 end

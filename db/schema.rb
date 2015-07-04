@@ -66,7 +66,8 @@ ActiveRecord::Schema.define(version: 20150628141843) do
   add_index "courses", ["subject_id"], name: "index_courses_on_subject_id", using: :btree
 
   create_table "offices", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "regional_id"
   end
 
   create_table "professors", force: true do |t|
@@ -76,22 +77,27 @@ ActiveRecord::Schema.define(version: 20150628141843) do
 
   create_table "regionals", force: true do |t|
     t.string "name"
+    t.string "short_name"
   end
 
   create_table "solicitudes", force: true do |t|
-    t.text    "comments"
+    t.text    "applicant_comments"
+    t.text    "solicitant_comments"
     t.integer "solicitant_id"
     t.integer "applicant_id"
-    t.integer "course_id"
+    t.integer "origin_course_id"
+    t.integer "wanted_course_id"
   end
 
   add_index "solicitudes", ["applicant_id"], name: "index_solicitudes_on_applicant_id", using: :btree
-  add_index "solicitudes", ["course_id"], name: "index_solicitudes_on_course_id", using: :btree
+  add_index "solicitudes", ["origin_course_id"], name: "index_solicitudes_on_origin_course_id", using: :btree
   add_index "solicitudes", ["solicitant_id"], name: "index_solicitudes_on_solicitant_id", using: :btree
+  add_index "solicitudes", ["wanted_course_id"], name: "index_solicitudes_on_wanted_course_id", using: :btree
 
   create_table "subjects", force: true do |t|
     t.string  "name"
-    t.string  "type"
+    t.string  "short_name"
+    t.string  "kind"
     t.integer "career_id"
   end
 

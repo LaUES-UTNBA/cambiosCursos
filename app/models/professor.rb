@@ -8,6 +8,13 @@ class Professor < ActiveRecord::Base
   #last_name:string
 
   #
+  # Validations
+  #
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
+  #
   # Relations
   #
 

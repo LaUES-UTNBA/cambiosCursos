@@ -5,6 +5,14 @@ class Regional < ActiveRecord::Base
   #
 
   #name:string
+  #short_name:string
+
+  #
+  # Validations
+  #
+
+  validates :name, presence: true
+  validates :short_name, presence: true
 
   #
   # Relations

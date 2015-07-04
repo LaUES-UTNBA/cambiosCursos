@@ -7,6 +7,12 @@ class Career < ActiveRecord::Base
   #name:string
 
   #
+  # Validations
+  #
+
+  validates :name, presence: true
+
+  #
   # Relations
   #
 

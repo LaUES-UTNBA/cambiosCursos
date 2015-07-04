@@ -9,9 +9,20 @@ class User < ActiveRecord::Base
   #
 
   #email:string
+  #password:string
   #first_name:string
   #last_name:string
   #birth_date:date
+
+  #
+  # Validations
+  #
+
+  validates :email, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :birth_date, presence: true
+  validates :career, presence: true
 
   #
   # Relations
@@ -19,7 +30,7 @@ class User < ActiveRecord::Base
 
   belongs_to :career
   has_many :solicitudes, foreign_key: "solicitant_id" #These are the ones the user created
-  has_many :applications, foreign_key: "applicant_id" #These are the ones the user applied to
+  has_many :applications, class_name: "Solicitude", foreign_key: "applicant_id" #These are the ones the user applied to
 
 
 end
