@@ -1,0 +1,12 @@
+.container
+  .panel-group
+    .panel.panel-default
+      .panel-heading
+        .row
+          .col-md-1.text-left
+            %a{href: "#collapse-search", data: {toggle: "collapse"}}
+              Filtros
+
+      = render "shared/filters"
+
+  = render "shared/subscriptions_table"
