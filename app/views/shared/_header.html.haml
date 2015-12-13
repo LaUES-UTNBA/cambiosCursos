@@ -8,13 +8,13 @@
     %ul.nav.navbar-nav.pull-right.devise-links
       - if current_user.blank?
         %li
-          = link_to "Registrarse", new_user_registration_path
+          = link_to t(".sign_up"), new_user_registration_path
         %li
-          = link_to "Ingresar", new_user_session_path
+          = link_to t(".sign_in"), new_user_session_path
       - else
         %li
-          = link_to "Editar perfil", edit_users_path
+          = link_to t(".edit_profile"), edit_users_path
         %li
-          = link_to "Crear solicitud", new_subscriptions_path
+          = link_to t(".new_subscription"), new_subscriptions_path
         %li
-          = link_to "Salir", destroy_user_session_path, method: :delete
+          = link_to t(".sign_out"), destroy_user_session_path, method: :delete

@@ -1,3 +1,13 @@
 es:
   devise:
-    sign_in: Bienvenido!
+    sessions:
+      user:
+        signed_in: Bienvenido!
+        signed_out: Adios!
+  shared:
+    header:
+      sign_up: Registrarse
+      sign_in: Ingresar
+      edit_profile: Editar perfil
+      new_subscription: Crear solicitud
+      sign_out: Salir
