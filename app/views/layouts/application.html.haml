@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title CambiosCursos
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
     = content_tag :meta, "", name: "viewport", content: "width=devise-width, initial-scale=1"
   %body
@@ -16,5 +16,5 @@
       .notice{data: {notice: flash[:notice]}}
     = yield
     = render "shared/footer"
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = yield(:scripts)

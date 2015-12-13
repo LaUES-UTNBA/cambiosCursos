@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-ruby "2.2.2"
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.14'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -47,7 +45,7 @@ gem 'chosen-rails'
 
 gem 'devise' #Login
 gem 'cancancan', '~> 1.10' #Authorize
-gem "rolify"
+gem "rolify" #Error reports
 gem 'pg' #DataBase
 gem 'activeadmin', github: 'activeadmin'
 
