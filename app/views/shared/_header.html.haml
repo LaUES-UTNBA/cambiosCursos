@@ -13,4 +13,8 @@
           = link_to "Ingresar", new_user_session_path
       - else
         %li
+          = link_to "Editar perfil", edit_users_path
+        %li
+          = link_to "Crear solicitud", new_subscriptions_path
+        %li
           = link_to "Salir", destroy_user_session_path, method: :delete

@@ -46,5 +46,10 @@ class User < ActiveRecord::Base
     @ability ||= Ability.new(self)
   end
 
+  def full_name
+    #Move to a decorator?
+    "#{first_name} #{last_name}"
+  end
+
 
 end
