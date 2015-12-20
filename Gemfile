@@ -27,7 +27,7 @@ gem 'rails-erd'                          # Server
 gem 'yaml_db'                       # Provides rake db:data:dump and db:data:load for backups
 
 gem 'kaminari'                      # Pagination
-gem 'ransack'                      # Fiters
+gem 'searchlight'                      # Fiters
 
 gem 'redis'
 

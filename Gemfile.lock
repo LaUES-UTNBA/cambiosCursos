@@ -261,6 +261,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    searchlight (4.1.0)
     sexp_processor (4.6.0)
     simple_form (3.2.0)
       actionpack (~> 4.0)
@@ -332,11 +333,11 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.14)
   rails-erd
-  ransack
   redis
   rolify
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  searchlight
   simple_form
   spring
   sqlite3
