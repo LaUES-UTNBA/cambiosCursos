@@ -19,3 +19,6 @@
 //= require bootstrap-datetimepicker
 //= require bootstrap-notify
 //= require notifications
+//= require moment
+//= require jquery.datetimepicker
+//= require datetimepicker_initialize
